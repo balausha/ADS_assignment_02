@@ -20,6 +20,11 @@ def loadexcel(file):
 
 sd = loadexcel("API_19_DS2_en_excel_v2_5360124.xlsx")
 
+#check first 5 rows
+#print(sd.head())
+#check the summarize values of data
+print(sd.describe())
+
 sd=sd.drop(['Country Code', 'Indicator Code'], axis=1)
 
 def cleaningData(df):

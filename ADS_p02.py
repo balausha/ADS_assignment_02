@@ -98,19 +98,23 @@ def fland(Spain,India,China,Pakistan,Mali,Peru,Canada,United_States,Sri_Lanka):
     
 fland(Spain,India,China,Pakistan,Mali,Peru,Canada,United_States,Sri_Lanka)
 
+#find out the correlation of India data
 sns.heatmap(India.corr(), cmap='Reds', center=0, annot=True, linewidths=0.05)
 plt.title("India")
 plt.show()
 
+#find out the correlation of China data
 sns.heatmap(China.corr(), cmap=sns.cubehelix_palette(as_cmap=True), center=0, annot=True, linewidths=0.05)
 plt.title("China")
 plt.show()
 
+#find out the correlation of Canada data
 sns.heatmap(Canada.corr(), cmap='crest', center=0, annot=True, linewidths=0.05)
 plt.title("Canada")
 plt.show()
 
+#find out the skewness of Spain data
 spain = stats.skew(Spain)
-
+#find out the skewness of India data
 ind = stats.skew(India)
 

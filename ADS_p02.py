@@ -28,6 +28,7 @@ print(sd.describe())
 sd=sd.drop(['Country Code', 'Indicator Code'], axis=1)
 
 def cleaningData(df):
+    '''This is used to set index and transpose the dataframe '''
     df.set_index(['Country Name', 'Indicator Name'], inplace=True)
     df=df.T
     df=df.fillna(0) 

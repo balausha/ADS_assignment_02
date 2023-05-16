@@ -4,15 +4,21 @@ Created on Mon Mar 20 18:28:52 2023
 
 @author: Lenovo
 """
-
+#required libraries
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
-import stats
+from scipy import stats
+#import stats
 
-#Source Data
-sd = pd.read_excel("C:/Users/balas/OneDrive/Documents/API_19_DS2_en_excel_v2_5360124.xls", header=3)
+
+def loadexcel(file):
+    '''This is used to  read csv file and it accept file name as a parameter'''
+    sd = pd.read_excel(file, header=3)
+    return sd
+
+sd = loadexcel("API_19_DS2_en_excel_v2_5360124.xlsx")
 
 sd=sd.drop(['Country Code', 'Indicator Code'], axis=1)
 

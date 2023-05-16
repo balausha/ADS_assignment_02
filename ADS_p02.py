@@ -58,7 +58,7 @@ United_States = United_States.loc[('1980', '1985', '1990', '1995', '2000', '2005
 Sri_Lanka = Sri_Lanka.loc[('1980', '1985', '1990', '1995', '2000', '2005', '2010'), ('Renewable energy consumption (% of total final energy consumption)', 'Other greenhouse gas emissions (% change from 1990)', 'Arable land (% of land area)', 'Forest area (% of land area)', 'Population growth (annual %)', 'Urban population growth (annual %)','Agricultural land (% of land area)','Cereal yield (kg per hectare)','CO2 emissions (kt)')]
 
 def aland(Spain,India,China,Pakistan,Mali,Peru,Canada,United_States,Sri_Lanka):
-     '''This is used to plot Arable Land data '''
+    '''This is used to plot Arable Land data '''
     plt.plot(Spain.index, Spain.loc[:, 'Arable land (% of land area)'], label='Spain')
     plt.plot(India.index, India.loc[:, 'Arable land (% of land area)'], label='India')
     plt.plot(China.index, China.loc[:, 'Arable land (% of land area)'], label='China')
@@ -77,22 +77,26 @@ def aland(Spain,India,China,Pakistan,Mali,Peru,Canada,United_States,Sri_Lanka):
 
 aland(Spain,India,China,Pakistan,Mali,Peru,Canada,United_States,Sri_Lanka)
 
-plt.plot(Spain.index, Spain.loc[:, 'Forest area (% of land area)'], label='Spain')
-plt.plot(India.index, India.loc[:, 'Forest area (% of land area)'], label='India')
-plt.plot(China.index, China.loc[:, 'Forest area (% of land area)'], label='China')
-plt.plot(Pakistan.index, Pakistan.loc[:, 'Forest area (% of land area)'], label='Pakistan')
-plt.plot(Mali.index, Mali.loc[:, 'Forest area (% of land area)'], label='Mali')
-plt.plot(Peru.index, Peru.loc[:, 'Forest area (% of land area)'], label='Peru')
-plt.plot(Canada.index, Canada.loc[:, 'Forest area (% of land area)'], label='Canada')
-plt.plot(United_States.index, United_States.loc[:, 'Forest area (% of land area)'], label='United States')
-plt.plot(Sri_Lanka.index, Sri_Lanka.loc[:, 'Forest area (% of land area)'], label='Sri Lanka')
-plt.xlabel('Years')
-plt.ylabel('Land Percentage')
-plt.title('Forest Land')
-plt.xlim(1, 6, 1)
-plt.ylim(0, 65, 10)
-plt.legend(bbox_to_anchor=(1.0, 1.05))
-plt.show()
+def fland(Spain,India,China,Pakistan,Mali,Peru,Canada,United_States,Sri_Lanka):
+    '''This is used to plot Arable FLand data '''
+    plt.plot(Spain.index, Spain.loc[:, 'Forest area (% of land area)'], label='Spain')
+    plt.plot(India.index, India.loc[:, 'Forest area (% of land area)'], label='India')
+    plt.plot(China.index, China.loc[:, 'Forest area (% of land area)'], label='China')
+    plt.plot(Pakistan.index, Pakistan.loc[:, 'Forest area (% of land area)'], label='Pakistan')
+    plt.plot(Mali.index, Mali.loc[:, 'Forest area (% of land area)'], label='Mali')
+    plt.plot(Peru.index, Peru.loc[:, 'Forest area (% of land area)'], label='Peru')
+    plt.plot(Canada.index, Canada.loc[:, 'Forest area (% of land area)'], label='Canada')
+    plt.plot(United_States.index, United_States.loc[:, 'Forest area (% of land area)'], label='United States')
+    plt.plot(Sri_Lanka.index, Sri_Lanka.loc[:, 'Forest area (% of land area)'], label='Sri Lanka')
+    plt.xlabel('Years')
+    plt.ylabel('Land Percentage')
+    plt.title('Forest Land')
+    plt.xlim(1, 6, 1)
+    plt.ylim(0, 65, 10)
+    plt.legend(bbox_to_anchor=(1.0, 1.05))
+    plt.show()
+    
+fland(Spain,India,China,Pakistan,Mali,Peru,Canada,United_States,Sri_Lanka)
 
 sns.heatmap(India.corr(), cmap='Reds', center=0, annot=True, linewidths=0.05)
 plt.title("India")
